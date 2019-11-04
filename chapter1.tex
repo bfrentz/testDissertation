@@ -278,11 +278,11 @@ For the $\ce{^{14}N} \left( p, \gamma \right) \ce{^{15}O}$ reaction, both resona
 
 \subsection{Resonant reactions}
 
-The presence of a resonance enhances the cross section at its specific center-of-mass energy. The specific increase is highly dependent on the situation since, as a two-step process, it depends on the probability of both forming the compound nucleus and decaying via a specific pathway. To understand this mathematically, consider an isolated, narrow resonance at energy $E_{R}$; the reaction cross-section under the influence of such a resonance is described by the Breit-Wigner formula:
+The presence of a resonance enhances the cross section at its specific center-of-mass energy. The specific increase is highly dependent on the situation since, as a two-step process, it depends on the probability of both forming the compound nucleus and decaying via a specific pathway. To understand this mathematically, consider an isolated, narrow resonance at energy $E_{R}$; the reaction cross section under the influence of such a resonance is described by the Breit-Wigner formula:
 
 \begin{equation}
 \label{eqn: BreitWigner}
-\sigma_{BW}(E) = \pi \lambdabar^{2} \frac{2J_r+1}{(2J_1+1)(2J_2+1)}\frac{\Gamma_\mathrm{in}\Gamma_\mathrm{out}}{(E-E_{R})^2+\Gamma_{T}^2/4}
+\sigma_{BW}(E) = \pi \lambdabar^{2} \frac{2J_R+1}{(2J_1+1)(2J_2+1)}\frac{\Gamma_\mathrm{in}\Gamma_\mathrm{out}}{(E-E_{R})^2+\Gamma_{T}^2/4}
 \end{equation}
 
 where $\lambdabar$ is the deBroglie wavelength corresponding to the incident momentum, $p=\hbar/\lambdabar$, $J_1$ and $J_2$ are the spins of the target and projectile, $J_R$ is the spin of the resonance in the compound nucleus, $\Gamma_\mathrm{in}$ and $\Gamma_\mathrm{out}$ are the entrance and exit reaction channel widths (essentially the probability for a particular part of the process to occur), and $\Gamma_T$ is the total width ($\Gamma_t = \Gamma_1 + \Gamma_2 + ... \Gamma_n$). The total width is related to the mean lifetime, $\tau$, of the excited state by 
@@ -292,7 +292,32 @@ where $\lambdabar$ is the deBroglie wavelength corresponding to the incident mom
 \label{eqn: width to lifetime}
 \end{equation}
 
-As the total decay width depends on the sum of the individual partial widths
+For most nuclear states, the widths can be determined experimentally, allowing for the understanding of the total width, $\Gamma_{T}$. However, due to many of the earlier described constraints, this is not always easy in practice. Additionally, the fact that different resonances have different strengths and can potentially dominate the contributions of others adds another complication. On the other hand, this implies that the total width will be dominated by that specific decay's width. If the dominant decay is one of the primary entrance or exit channels astrophysically, this will have a proportionally large effect on the overall cross section and reaction rate. In the case of the $\ce{^{14}N} \left( p, \gamma \right) \ce{^{15}O}$ reaction, there are two states near the proton threshold, one above and one below in energy, as shown in Fig. \ref{fig: level diagram}, and these two provide the largest contributions to the overall astrophysical reaction rate.
+
+To characterize this, we replace the Breit-Wigner formula from Equation \ref{eqn: BreitWigner} into the reaction rate equation \ref{eqn: rr full} cite{IliadisBook}. This leads to 
+
+\begin{equation}
+\langle \sigma v \rangle_{BW} = \left( \frac{8}{\pi \mu} \right) ^{1/2} \left( \frac{1}{kT} \right) ^{3/2} \int_{0}^{\infty} \sigma_{BW} (E) E \exp \left(-\dfrac{E}{kT} \right) dE.
+\label{eqn: reaction rate BW}
+\end{equation}
+
+\noindent Because we are considering a narrow energy range for this resonance, both the energy, $E$, and the exponential term provided by the Maxwell-Boltzmann velocity distribution, $\exp \left( -E / kT \right)$, are constant over the integration. This allows us to rewrite the integral as
+
+\begin{equation}
+\langle \sigma v \rangle_{BW} = \left( \frac{8}{\pi \mu} \right) ^{1/2} \left( \frac{1}{kT} \right) ^{3/2} E_{R} \exp \left(-\dfrac{E_{R}}{kT} \right) \int_{0}^{\infty} \sigma_{BW} (E) dE.
+\end{equation}
+
+\noindent The previous integral is proportional to the area under the resonance cross section and is known as the resonance strength. By substituting the Breit-Wigner formula, the integral becomes
+
+\begin{equation}
+% \int_{0}^{\infty} \sigma_{BW} (E) dE = \pi \lambdabar_{R}^{2} \left(  \frac{2J_R+1}{(2J_1+1)(2J_2+1) \right) (1 + \delta_{12}) \Gamma_{\text{in}} \Gamma_{\text{out}} \int_{0}^{\infty} \dfrac{1}{(E-E_{R})^{2} + (\Gamma_{T}/2)^{2}} dE,
+\end{equation}
+
+\noindent which is solved analytically as
+
+\begin{equation}
+% \int_{0}^{\infty} \sigma_{BW} (E) dE = \pi \lambdabar_{R}^{2} \left(  \frac{2J_R+1}{(2J_1+1)(2J_2+1) \right)  (1 + \delta_{12}) \frac{\Gamma_{\text{in}} \Gamma_{\text{out}} }{\Gamma_{T}}
+\end{equation}
 
 
 
@@ -312,6 +337,9 @@ As the total decay width depends on the sum of the individual partial widths
 
 \section{R-matrix theory}
 \label{sec: r-matrix}
+
+In many cases, the nuclear cross-section landscape is quite complicated, with the combined effects of multiple resonances and direct capture contributions. With all of this overlap, the Breit-Wigner formulation starting in Equation \ref{eqn: BreitWigner} is no longer valid. Therefore, a reliable theory accounting for all contributions and interferences is needed to describe relevant information and perform meaningful extrapolations. For these purposes, R-matrix theory was developed and is now commonly used in nuclear astrophysics calculations. 
+
 \begin{itemize}
 \item general description
 \item Elastic scattering of s-wave neutrons example
