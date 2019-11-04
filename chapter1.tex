@@ -316,18 +316,34 @@ To characterize this, we replace the Breit-Wigner formula from Equation \ref{eqn
 \noindent which is solved analytically as
 
 \begin{equation}
-\int_{0}^{\infty} \sigma_{\text{BW}} (E) dE = \pi \lambdabar_{R}^{2} \left(  \frac{2J_R+1}{(2J_1+1)(2J_2+1)} \right)  (1 + \delta_{12}) \frac{\Gamma_{\text{in}} \Gamma_{\text{out}} }{\Gamma_{T}}
+\int_{0}^{\infty} \sigma_{\text{BW}} (E) dE = \pi \lambdabar_{R}^{2} \left(  \frac{2J_R+1}{(2J_1+1)(2J_2+1)} \right)  (1 + \delta_{12}) \frac{\Gamma_{\text{in}} \Gamma_{\text{out}} }{\Gamma_{T}}.
+\end{equation}
+
+\noindent For simplicity, the statistical factor, $\omega$, is now defined as
+
+\begin{equation}
+\omega = \frac{2J_R+1}{(2J_1+1)(2J_2+1)} (1 + \delta_{12})
+\end{equation}
+
+\noindent and the width ratio, $\gamma$, is
+
+\begin{equation}
+\gamma = \dfrac{\Gamma_{\text{in}} \Gamma_{\text{out}}}{\Gamma_{T}}, 
+\end{equation}
+
+\noindent leading to 
+
+\begin{equation}
+\int_{0}^{\infty} \sigma_{\text{BW}} (E) dE = 2\pi^{2} \lambdabar_{R}^{2} \omega \gamma.
+\end{equation}
+
+\noindent The product $\omega \gamma$ is called the resonance strength and is very important for reaction rate calculation, since the rate is dependent primarily on it and the resonance energy, $E_{R}$. This can be seen by implementing this integral calculation with the earlier derivation, resulting in
+
+\begin{equation}
+\langle \sigma v \rangle = \left(  \dfrac{2 \pi}{\mu k T} \right)^{3/2} (\omega \gamma) \hbar^{2} \exp \left( - \dfrac{E_{R}}{k T} \right).
 \end{equation}
 
 
-
-\begin{itemize}
-\item Breit-Wigner
-\item Resonant RR derivation using BW
-\item width's and partial width's
-\item $\omega \gamma$
-\item Transition rate
-\end{itemize}
 
 \subsection{Direct capture reactions}
 \begin{itemize}
