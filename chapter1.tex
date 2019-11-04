@@ -252,12 +252,14 @@ The Gamow peak's maximum can be obtained with basic calculus on the exponential 
 
 \begin{equation}
 E_{0} = \left( \dfrac{b k T}{2}  \right)^{2/3}. 
+\label{eqn: GamowPeak}
 \end{equation}
 
 \noindent For a given stellar temperature, $T$, the average effective energy at which the reaction occurs is $E_{0}$. Additionally, this also allows for an approximation of the range of energies over which the reaction primarily occurs, provided that the $S$-factor is smoothly varying (which is not true if resonances are present, which will be discussed in the next section). This range of energies is known as the Gamow Window, $\Delta$:
 
 \begin{equation}
 \Delta = \dfrac{4}{\sqrt{3}} \sqrt{E_{0} k T}.
+\label{eqn: Gamow window width}
 \end{equation}
 
 \noindent The Gamow window identifies the range of energies over which experimental data should be taken to provide a complete understanding of stellar processes. As an example, the $\ce{^{14}N} \left( p, \gamma \right) \ce{^{15}O}$ reaction in the sun has a Gamow peak energy at $E_{0} = 26.6$ keV and $\Delta = 13.6$ keV, meaning that measuring the cross section in the energy range of 19.8 - 33.4 keV is crucial in the understanding of this reaction. 
@@ -276,9 +278,29 @@ For the $\ce{^{14}N} \left( p, \gamma \right) \ce{^{15}O}$ reaction, both resona
 \caption{An energy level diagram of the $\ce{^{14}N} \left( p, \gamma \right) \ce{^{15}O}$ reaction. This shows the pathways of decay to the ground state of the $\ce{^{15}O}$ nucleus. The paths shown in  red indicate a resonance reaction, with the formation of the compound nucleus in an excited state, while the path in blue shows a direct capture process, proceeding immediately to the ground state.}
 \end{figure}
 
+
+
+
+\subsection{Direct capture reactions}
+
+The other side of the proverbial coin from resonant reactions is direct capture, or nonresonant reactions. Such cases are defined as those in which the cross section and $S$-factor vary smoothly with energy, being the result of a one-step, electromagnetic process where the capture proceeds from the initial state of two incident particles to the final, bound state of the system. This is process is also highlighted as a part of Fig. \ref{fig: level diagram}. 
+
+With nonresonant reactions, the $S$-factor varies smoothly with energy. This means that the earlier characterization  of the $S$-factor, reaction rate, and Gamow energy/window parameters in Equations \ref{eqn: rr full} - 
+\ref{eqn: Gamow window width} are applicable for the case of direct reactions. In extrapolating experimental data to stellar energy ranges, it is often useful to express an effective $S$-factor, $S_{\text{eff}}$ from the Taylor expansion of the component functions cite{IliadisBook},
+
+\begin{equation}
+S_{\text{eff}} = S(0) \left( 1 + \dfrac{5 k T}{36 E_{0}}   \right) + S'(0) E_{0} \left( 1 + \dfrac{35 k T}{36 E_{0}}   \right)  + \dfrac{1}{2} S''(0) E_{0}^{2} \left( 1 + \dfrac{89 k T}{36 E_{0}}   \right),
+\label{eqn: Seff}
+\end{equation}
+
+\noindent where $E_{0}$ is the Gamow peak energy from Equation \ref{eqn: GamowPeak}. Armed with this expansion, the $S$-factor can be successfully extrapolated to low, stellar energies in cases where the $S$-factor varies slowly with energy. This means that for nonresonant reactions, $S(E)$ can be approximated by its zero-energy value, $S(0)$, and only small corrections given by its first and second derivatives, $S'(0)$ and $S''(0)$, respectively. 
+
+
+
+
 \subsection{Resonant reactions}
 
-The presence of a resonance enhances the cross section at its specific center-of-mass energy. The specific increase is highly dependent on the situation since, as a two-step process, it depends on the probability of both forming the compound nucleus and decaying via a specific pathway. To understand this mathematically, consider an isolated, narrow resonance at energy $E_{R}$; the reaction cross section under the influence of such a resonance is described by the Breit-Wigner formula:
+The presence of a resonance enhances the cross section at its specific center-of-mass energy and means that the $S$-factor no longer varies smoothly with respect to energy. The specific increase is highly dependent on the situation since, as a two-step process, it depends on the probability of both forming the compound nucleus and decaying via a specific pathway, also shown in Fig. \ref{fig: level diagram}. To understand this mathematically, consider an isolated, narrow resonance at energy $E_{R}$; the reaction cross section under the influence of such a resonance is described by the Breit-Wigner formula:
 
 \begin{equation}
 \label{eqn: BreitWigner}
@@ -337,19 +359,13 @@ To characterize this, we replace the Breit-Wigner formula from Equation \ref{eqn
 \int_{0}^{\infty} \sigma_{\text{BW}} (E) dE = 2\pi^{2} \lambdabar_{R}^{2} \omega \gamma.
 \end{equation}
 
-\noindent The product $\omega \gamma$ is called the resonance strength and is very important for reaction rate calculation, since the rate is dependent primarily on it and the resonance energy, $E_{R}$. This can be seen by implementing this integral calculation with the earlier derivation, resulting in
+\noindent The product $\omega \gamma$ is called the resonance strength and is very important for reaction rate calculation, since the rate is dependent primarily on it and the resonance energy, $E_{R}$. This can be seen by implementing this integral calculation with the earlier derivation in Equation \ref{eqn: reaction rate BW}, resulting in
 
 \begin{equation}
 \langle \sigma v \rangle = \left(  \dfrac{2 \pi}{\mu k T} \right)^{3/2} (\omega \gamma) \hbar^{2} \exp \left( - \dfrac{E_{R}}{k T} \right).
 \end{equation}
 
 
-
-\subsection{Direct capture reactions}
-\begin{itemize}
-\item Occurs through quantum tunneling
-\item Since s-factor varies smoothly with energy, reaction rate is highly dependent on coulomb penetrability and MB velocity disribution. 
-\end{itemize}
 
 \section{R-matrix theory}
 \label{sec: r-matrix}
