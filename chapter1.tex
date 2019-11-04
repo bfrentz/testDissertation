@@ -297,26 +297,26 @@ For most nuclear states, the widths can be determined experimentally, allowing f
 To characterize this, we replace the Breit-Wigner formula from Equation \ref{eqn: BreitWigner} into the reaction rate equation \ref{eqn: rr full} cite{IliadisBook}. This leads to 
 
 \begin{equation}
-\langle \sigma v \rangle_{BW} = \left( \frac{8}{\pi \mu} \right) ^{1/2} \left( \frac{1}{kT} \right) ^{3/2} \int_{0}^{\infty} \sigma_{BW} (E) E \exp \left(-\dfrac{E}{kT} \right) dE.
+\langle \sigma v \rangle_{\text{BW}} = \left( \frac{8}{\pi \mu} \right) ^{1/2} \left( \frac{1}{kT} \right) ^{3/2} \int_{0}^{\infty} \sigma_{\text{BW} }(E) E \exp \left(-\dfrac{E}{kT} \right) dE.
 \label{eqn: reaction rate BW}
 \end{equation}
 
 \noindent Because we are considering a narrow energy range for this resonance, both the energy, $E$, and the exponential term provided by the Maxwell-Boltzmann velocity distribution, $\exp \left( -E / kT \right)$, are constant over the integration. This allows us to rewrite the integral as
 
 \begin{equation}
-\langle \sigma v \rangle_{BW} = \left( \frac{8}{\pi \mu} \right) ^{1/2} \left( \frac{1}{kT} \right) ^{3/2} E_{R} \exp \left(-\dfrac{E_{R}}{kT} \right) \int_{0}^{\infty} \sigma_{BW} (E) dE.
+\langle \sigma v \rangle_{\text{BW}} = \left( \frac{8}{\pi \mu} \right) ^{1/2} \left( \frac{1}{kT} \right) ^{3/2} E_{R} \exp \left(-\dfrac{E_{R}}{kT} \right) \int_{0}^{\infty} \sigma_{\text{BW}} (E) dE.
 \end{equation}
 
 \noindent The previous integral is proportional to the area under the resonance cross section and is known as the resonance strength. By substituting the Breit-Wigner formula, the integral becomes
 
 \begin{equation}
-% \int_{0}^{\infty} \sigma_{BW} (E) dE = \pi \lambdabar_{R}^{2} \left(  \frac{2J_R+1}{(2J_1+1)(2J_2+1) \right) (1 + \delta_{12}) \Gamma_{\text{in}} \Gamma_{\text{out}} \int_{0}^{\infty} \dfrac{1}{(E-E_{R})^{2} + (\Gamma_{T}/2)^{2}} dE,
+\int_{0}^{\infty} \sigma_{\text{BW}} (E) dE = \pi \lambdabar_{R}^{2} \left(  \frac{2J_R+1}{(2J_1+1)(2J_2+1)} \right) (1 + \delta_{12}) \Gamma_{\text{in}} \Gamma_{\text{out}} \int_{0}^{\infty} \dfrac{1}{(E-E_{R})^{2} + (\Gamma_{T}/2)^{2}} dE,
 \end{equation}
 
 \noindent which is solved analytically as
 
 \begin{equation}
-% \int_{0}^{\infty} \sigma_{BW} (E) dE = \pi \lambdabar_{R}^{2} \left(  \frac{2J_R+1}{(2J_1+1)(2J_2+1) \right)  (1 + \delta_{12}) \frac{\Gamma_{\text{in}} \Gamma_{\text{out}} }{\Gamma_{T}}
+\int_{0}^{\infty} \sigma_{\text{BW}} (E) dE = \pi \lambdabar_{R}^{2} \left(  \frac{2J_R+1}{(2J_1+1)(2J_2+1)} \right)  (1 + \delta_{12}) \frac{\Gamma_{\text{in}} \Gamma_{\text{out}} }{\Gamma_{T}}
 \end{equation}
 
 
