@@ -122,7 +122,7 @@ These laboratories are well known for their contributions in solving the \textsl
 
 
 
-Due to the importance of the $\ce{^{14}N} \left( p, \gamma \right) \ce{^{15}O}$ reaction, it is the focus of this work. Presented first, in Sec. \ref{sec: reaction theory} and Sec. \ref{sec: r-matrix}, are an overview of nuclear reaction theory and $R$-matrix formalism. The current state of knowledge surrounding the reaction, its uncertainties, and previous measurements are discussed in Sec. \ref{sec: 14N(p,g)}. After which, a summary of the Doppler Shift Attenuation Method for measuring extremely short nuclear lifetimes will be given in Sec. \ref{sec: dsam-intro}. An outline of the remainder of this work will finally be presented in Sec. \ref{sec: thesis outline}.
+Due to the importance of the $\ce{^{14}N} \left( p, \gamma \right) \ce{^{15}O}$ reaction, it is the focus of this work. Presented first, in Sec. \ref{sec: thermonuclear reaction rates} and Sec. \ref{sec: reactions} are an overview of nuclear reactions and reaction theory relevant for nuclear astrophysics. An extension of these theories using the $R$-matrix formalism will be presented in Sec. \ref{sec: r-matrix}. The current state of knowledge surrounding the reaction, its uncertainties, and previous measurements are discussed in Sec. \ref{sec: 14N(p,g)}. After which, a summary of the Doppler Shift Attenuation Method for measuring extremely short nuclear lifetimes will be given in Sec. \ref{sec: dsam-intro}. Finally, an outline of the remainder of this work will be presented in Sec. \ref{sec: thesis outline}.
 
 
 \begin{figure}
@@ -251,6 +251,7 @@ The Gamow peak's maximum can be obtained with basic calculus on the exponential 
 
 \begin{figure}
 \label{fig: Gamow Peak}
+% Figure from Galinski thesis?
 \caption{The two dominant terms of the reaction rate calculation and their convolution (Gamow peak). }
 \end{figure}
 
@@ -266,7 +267,7 @@ E_{0} = \left( \dfrac{b k T}{2}  \right)^{2/3}.
 \label{eqn: Gamow window width}
 \end{equation}
 
-\noindent The Gamow window identifies the range of energies over which experimental data should be taken to provide a complete understanding of stellar processes. As an example, the $\ce{^{14}N} \left( p, \gamma \right) \ce{^{15}O}$ reaction in the sun has a Gamow peak energy at $E_{0} = 26.6$ keV and $\Delta = 13.6$ keV, meaning that measuring the cross section in the energy range of 19.8 - 33.4 keV is crucial in the understanding of this reaction. 
+\noindent The Gamow window identifies the range of energies over which experimental data should be taken to provide a complete understanding of stellar processes and the interplay of the Maxwell-Boltzmann velocity distribution with the Coulomb penetrability to create the Gamow window is presented in Fig. \ref{fig: Gamow Peak}. As an example, the $\ce{^{14}N} \left( p, \gamma \right) \ce{^{15}O}$ reaction in the sun has a Gamow peak energy at $E_{0} = 26.6$ keV and $\Delta = 13.6$ keV, meaning that measuring the cross section in the energy range of 19.8 - 33.4 keV is crucial in the understanding of this reaction. 
 
 Unfortunately, though, measuring at energies this low is not feasible, experimentally. This is because at these energies the signal-to-noise ratio of observables drops dramatically and the signals of interest are obscured within background noise. To provide accurate measurements of such situations, experiments must necessarily then occur in the timescale of years to measure a single datum. This is simply unfeasible, practically, and our understanding must rely on extrapolations from higher-energy data. As the $\ce{^{14}N} \left( p, \gamma \right) \ce{^{15}O}$ reaction is not alone in having a Gamow window at such low energies, extrapolation techniques must be employed to describe the cross section and $S$-factor for nearly all astrophysically important reactions at the Gamow window. 
 
@@ -314,7 +315,7 @@ The presence of a resonance enhances the cross section at its specific center-of
 where $\lambdabar$ is the deBroglie wavelength corresponding to the incident momentum, $p=\hbar/\lambdabar$, $J_1$ and $J_2$ are the spins of the target and projectile, $J_R$ is the spin of the resonance in the compound nucleus, $\Gamma_\mathrm{in}$ and $\Gamma_\mathrm{out}$ are the entrance and exit reaction channel widths (essentially the probability for a particular part of the process to occur), and $\Gamma_T$ is the total width ($\Gamma_t = \Gamma_1 + \Gamma_2 + ... \Gamma_n$). The total width is related to the mean lifetime, $\tau$, of the excited state by 
 
 \begin{equation}
-\Gamma_{T} \tau = \hbar.
+\tau \Gamma_{T} = \hbar.
 \label{eqn: width to lifetime}
 \end{equation}
 
@@ -450,35 +451,114 @@ In 2001, however, Angulo \textit{et al.} revisited the data from Schr{\"o}der \t
 \caption{A summary of previous $S$-factor measurements and analyses. Currently a placeholder until I make the actual table.}
 \end{table}
 
-The most recent measurements were published by Li \textit{et al.} in 2016 cite{Li2016} and Wagner \textit{et al.} in 2018 cite{Wagner2018}. These experiments differed in their aim. The Li experiment focused on higher-energy contributions and determined radiative capture data for capture to the 6.79 MeV level in the 1.5- to 3.4-MeV proton energy range and the proton energy range of 0.6 - 3.4 MeV for the DC/R$\rightarrow$gs transition from 0.6 to 3.4 MeV. The authors also reported angular distributions for their measurements. The authors identified the primary, remaining sources of uncertainty as the DC/R$\rightarrow$gs primary transition, the DC/R$\rightarrow$6.17 MeV level primary transition, and the $\Gamma$ width of the 6.79 MeV state. Critically though, the data reported do not overlap with the low energy measurements of the LUNA and TUNL groups and their absolute scale does not align, leading to inconsistent extrapolation and significant error in the deduced $S(0)$ value.
+The most recent measurements were published by Li \textit{et al.} in 2016 cite{Li2016} and Wagner \textit{et al.} in 2018 cite{Wagner2018}. These experiments differed in their aim. The Li experiment focused on higher-energy contributions and determined radiative capture data for capture to the 6.79 MeV level in the 1.5- to 3.4-MeV proton energy range and the proton energy range of 0.6 - 3.4 MeV for the DC/R$\rightarrow$gs transition from 0.6 to 3.4 MeV. The authors also reported angular distributions for their measurements. The authors identified the primary, remaining sources of uncertainty as the DC/R$\rightarrow$gs primary transition, the DC/R$\rightarrow$6.17 MeV level primary transition, and the $\Gamma$ width of the 6.79 MeV state. Fig. \ref{fig: QianRmatrix} shows the effects of these uncertainties in the authors' $R$-matrix calculations and how it differs from other calculations. Due to the astrophysical importance of this reaction detailed in Section \ref{sec: Nuclear astrophysics overview}, an accurate determination of this extrapolated $S$-factor is of the utmost importance. Critically, the data reported do not overlap with the low energy measurements of the LUNA and TUNL groups and their absolute scale does not align, also leading to further inconsistent extrapolation and significant error in the deduced $S(0)$ value.
+
+\begin{figure}
+\includegraphics[width=\linewidth]{figures/qianSfactor.pdf}
+\label{fig: QianRmatrix}
+\caption{$R$-matrix extrapolation of the $S$-factor given in cite{Li2016}. The authors identified the major sources of uncertainty as the uncertainty as the DC/R$\rightarrow$gs primary transition, the DC/R$\rightarrow$6.17 MeV level primary transition, and the $\Gamma$ width of the 6.79 MeV state. Of these, the latter is the dominant term. This figure highlights the effects that these uncertainties have on low-energy extrapolations, varying by nearly a factor of two. }
+\end{figure}
 
 The Wagner \textit{et al.} study attempted to remedy this, providing an independent cross check of the ground state and 6.79 MeV capture transitions in the proton energy range of $E_{p}$ = 366–1289 keV, overlapping with the low-energy data sets. In the study, the authors found $S$-factors elevated significantly above those of any previous measurement for both of the transitions measured. Due to this, their results for the extrapolated $S(0)$ and contributions from the DC/R$\rightarrow$6.79 MeV transition agree with those from Li \textit{et al.}, but they are unable to draw conclusions about the ground state transition or any of the other, weaker transitions. Ultimately, this means that their results were unable to address any of the major uncertainties left plaguing the situation. 
 
 
+
 \subsection{Lifetime}
-\begin{itemize}
-\item Existing literature
-\item Indirect method
-\item inverse vs. forward kinematics
-\item Isobaric analog state
-\end{itemize}
 
 
+As discussed, the $\Gamma$ width of the 6.79 MeV subthreshold state is the dominant uncertainty on the total $S$-factor at zero energy, as illustrated by Fig. \ref{fig: QianRmatrix}. The literature to date on the lifetimes/widths of the important levels in $\ce{^{15}O}$ are summarized in Table \ref{table: lifetimes}. Some of the values present in the table are those extracted as a fit parameter from $R$-matrix analyses, instead of experimental measurements cite{Schroder1987, Angulo2001, Fomicola2004, Runkle2005, Marta2008, Azuma2010, Adelberger2011}. By having a dominant term of the calculation be a floating fit parameter, accuracy and reliability in the extrapolations are lost. Therefore, determination of this quantity experimentally is critical. 
+
+
+ \begin{table}[]
+\begin{tabular}{lllll}
+ &  &  &  &  \\
+ &  &  &  &  \\
+ &  &  &  &  \\
+ &  &  &  & 
+\end{tabular}
+\label{table: lifetimes}
+% copy qian's table  with the addition of TRIUMF (galinski) and Michelagnoli data
+\caption{A summary of previous lifetime/width measurements for important states in $\ce{^{15}O}$. Currently a placeholder until I make the actual table.}
+\end{table}
+
+There are five measurements of the lifetime or width of the 6.79 MeV state ''directly'' cite{Bertone2001, Yamada2004, Schurmann2008, Galinski2014, Michelagnoli2016}, highlighted in red in Table \ref{table: lifetimes}, and they are unfortunately disparate in their extracted values and have relatively large errors. 
+
+The first measurement was performed in 2001 by Bertone \textit{et al.}, using the Doppler Shift Attenuation Method (DSAM) to determine the lifetime of the state. This technique will be discussed in further detail later. The authors populated the state through resonant capture of protons in the $E_{p}$ = 278 keV state and observed the decaying $\gamma$-rays at three different angles. The measured lifetime for the 6.79 MeV state was determined to be $\tau = 1.60^{+0.75}_{-0.72}$ fs, corresponding to a width of $\Gamma = 0.41^{+0.34}_{-0.13}$ eV (determined by Equation \ref{eqn: width to lifetime}). 
+
+At RIKEN, in 2004, Yamada \textit{et al.} performed a measurement of the radiative width via Coulomb Excitation experiment cite{Yamada2004} as an independent verification of the Bertone result. For this, $\ce{^{15}O}$ nuclei were produced by fragmentation of an $\ce{^{16}O}$ beam incident on a $\ce{^{9}Be}$ target and then inelastically scattered off of a thick lead target. The de-excitation $\gamma$-rays were detected with an array of NaI (Tl doped) scintillation detectors. In order to disentangle the 6.79 MeV peak of interest from the 6.86 Mev peak in their spectrum, the authors compared the experimentally obtained spectrum from with the results of a Monte Carlo simulation. Due to the poor energy resolution of the detector system, the authors ultimately had difficulty separating the peaks and only reported an upper bound on the width, $\Gamma = 0.95^{+0.60}_{-0.95}$ eV, and a corresponding lifetime of $\tau = 0.69 ^{+1.10}_{-0.69}$ fs. 
+
+Four years later, Sch{\"u}rmann \textit{et al.} published a new measurement of the lifetime using the DSAM technique and an improved experimental setup cite{Schurmann2008}. This measurement used a single high-purity germanium (HPGe) detector on a rotating track and measuring at many more angles ranging from $40 - 116^{\deg}$, allowing for a check of asymmetries around the $90^{\deg}$ point and reducing systematic uncertainties from the use of different detectors. Similar to the Bertone measurement cite{Bertone2001}, the authors populated the state of interest via the resonance at $E_{p} = 278$ keV. In contrast to the Bertone result and similar to the Yamada work, the authors in this case could not recommend a finite value for the measured lifetime, obtaining a lifetime upper limit of $\tau < 0.77$ fs. 
+
+In an attempt to provide another experimental technique for determining the lifetime, Galinski \textit{et al.} performed another DSAM measurement at the TRIUMF facility cite{Galinski2014}. The major difference this time, however, was that the reaction occurred in inverse kinematics (i.e. one where the heavier reaction input is accelerated towards the stationary, lighter one), emulating a result from over 50 years ago cite{Gill1968}. The $\ce{^{15}O}$ in this experiment were produced via the $\ce{^{3}He}(\ce{^{16}O},\alpha)\ce{^{15}O}$ reaction with a $\ce{^{3}He}$-implanted gold-foil and the de-excitation $\gamma$-rays were detected with a clover HPGe detector (a single detector containing four separate Ge crystals) and filtered in coincidence with the reaction product $\alpha$'s. The authors then determined the lifetime with a Bayesian line-shape analysis of the spectra and found a most probable lifetime of $\tau = 0$ fs and an upper limit given by experimental uncertainties of $\tau < 1.8$ fs with a 68.3\% confidence limit. The authors, however, acknowledge that their result was statistics limited.
+
+The final measurement of this lifetime comes from an unpublished doctoral dissertation by Michelagnoli in 2013 cite{Michelagnoli2013}. Similar to Galinski \textit{et al.}, this measurement was done in inverse kinematics, with the $d(\ce{^{14}N},\ce{^{15}O})n$ reaction. The $\gamma$ rays from this measurement were detected with the state-of-the-art AGATA Demonstrator array using $\gamma$-ray tracking for precision angular data and a lineshape analysis of the data was performed by comparing with the results of a Monte Carlo simulation in the Geant4 software. This work also obtained only an upper-bound on the lifetime, $\tau < 1.0$ fs with a 68.3\% confidence limit. While this result is consistent with other literature values, it should nonetheless be taken with a grain of salt as it has not been peer-reviewed. 
+
+In aggregate, these results are unsatisfactory, with an error that is still uncomfortably large. Particularly, the DSAM results (with the exception of Galinski cite{Galinski2014}) neglected the systematic uncertainties from the stopping power of the targets in their ultimate lifetime calculation. The forward kinematics reactions cite{Bertone2001, Schurmann2008} both used nitrogen-implanted tantalum-foils for the experiment (saturated to a composition of Ta$_{2}$N$_{3}$), but calculated the lifetimes assuming target densities and stopping powers equal to those of pure tantalum. However, in this lifetime range, the deceleration of the $\ce{^{15}O}$ nuclei occurs in the region where the nitrogen is present in the lattice. Specifically, this means that the presence of the nitrogen has a significant effect on the actual stopping power. According to the authors of the respective works, by using accurate densities and stopping powers the inferred lifetimes obtained in their works would have changed by 100\% cite{Bertone2001} and 2\% cite{Schurmann2008}, respectively. In both, the authors also contend that their calculations are appropriate because they used an identical method to calculate the lifetime of the 5.18 MeV state, agreeing with literature values.
 
 
 
 \section{The Doppler Shift Attenuation Method for lifetime measurements}
 \label{sec: dsam-intro}
+
+
+Nuclear lifetimes are important observables to measure because they provide a link to understanding the strong nuclear force. They are necessary to determine the reduced transition probabilities which are one of the most important probes of nuclear structure and the forces governing the behavior of nuclei.The Doppler Shift Attenuation Method (DSAM) is a well characterized method for determining the lifetimes of excited nuclear states that decay via gamma emission in the range of 10$^{-11}$ - 10$^{-15}$ s cite{Alexander1968, Blaugrund1966}. The ranges where DSAM is applicable are compared with other common methods for determining nuclear lifetimes in Fig. \ref{fig: lifetimeRanges}. 
+
+
+\begin{figure}
+\label{fig: lifetimeRanges}
+\caption{Ranges over which the different lifetime measuring techniques are valid.}
+\end{figure}
+
+
+The basic idea of DSAM is to produce an excited nucleus inside of a dense target in which the reaction product will decay. The de-excitation of the nucleus then takes place either while the nucleus is slowing down or after it stops, depending on the lifetime of the specific state and the stopping within the target. Then, as is true with the classical Doppler shift, the energy of the emitted $\gamma$-rays are shifted depending on their emission angle relative to the motion of their source, the decaying nucleus. Thus, $\gamma$'s emitted at different velocities during the slow-down and detected at given angles will have a spread of energies. Specifically, for a given nucleus decaying at a time $t$ with a speed of $v(t)$, the Doppler shifted energy of the gamma ray, $E_{\gamma}$, is 
+
+\begin{equation}
+E_{\gamma} = E_{0} \left(1 + \dfrac{v(t)}{c} \cos (\theta)   \right),
+\label{eqn: doppler1}
+\end{equation}
+
+\noindent where $E_{0}$ is the energy of the decay for a nucleus at rest, $c$ is the speed of light, and $\theta$ is the lab angle between the momentum vectors of the decaying nucleus and gamma ray, respectively. A depiction of this scenario is given in Fig. \ref{fig: decay}.
+
+\begin{figure}
+\label{fig: decay}
+\caption{A nuclear reaction showing the creation of an excited nucleus and subsequent decay , causing a Doppler shift in the measured energy of the $\gamma$ ray.}
+\end{figure}
+
+
+As the nuclear decay process is statistical in nature, the measured spectrum of gamma energies for a particular transition is a continuous distribution of energies from the unshifted, rest energy peak to the maximally Doppler shifted peak. As Equation \ref{eqn: doppler1} was specific to a single transition, it is necessary to consider the entire sample of decays measured. By defining the average velocity of all nuclei at the time of decay, $\overline{v}$, the initial velocity of all recoiling nuclei, $v_{0}$, and their ratio, $F(\tau)$, called the attenuation factor, it is possible to relate the behavior of the entire distribution to the lifetime of the state. This is 
+
+\begin{equation}
+E_{\gamma} = E_{0} \left(1 + F(\tau) \beta_{0} \cos (\theta)   \right),
+\label{eqn: dopplerFull}
+\end{equation}
+
+\noindent where $\beta_{0} = v_{0}/c$ is the relativistic velocity factor. $F(\tau)$ therefore provides an analytical relation between the nuclear lifetime and the measured Doppler shift, given by Blaugrund in 1966 cite{Blaugrund1966} as
+
+\begin{equation}
+F(\tau) \beta_{0} = \dfrac{1}{\tau} \int_{0}^{\infty} \beta(t) \exp \left( \dfrac{t}{\tau} \right) dt,
+\end{equation} 
+
+\noindent where $\beta(t) = v(t)/c$ is the time dependent relativistic velocity factor. The devil, however, is in the details of calculating $\beta(t)$, since it is reliant on stopping powers of the nuclei in the target material, implying an accurate knowledge of the target composition and population pattern of the nucleus. In some cases the feeding is not well known and for nearly all cases, there is an estimated uncertainty in the assessment of stopping powers of materials to be at least 10\%.
+
+It is important to note that the Doppler shift can either increase or decrease the energy of the measured $\gamma$ ray, depending on whether the emitted gamma ray is at forward or backward angles relative to the nucleus' motion. Fig. \ref{fig: dopplerShift} shows the Doppler effect on a measured $\gamma$ spectrum, shifting the energy according to the measured angle. It is evident that the lifetime of a particular excited state has a dramatic effect on the location and shape of this distribution, for the longer a specific lifetime is, the broader its measured distribution will be (and vice versa) while the shift in the centroid of the peak will be lower than that of short lifetimes where the nucleus has a relatively higher velocity upon decay. 
+
+\begin{figure}
+\includegraphics[width=\linewidth]{figures/dopplerEffects.png}
+\label{fig: dopplerShift}
+\caption{The effect of the nuclear lifetime on the measured gamma spectrum for a given experimental scenario cite{Schimpf2011}. In forward angles, the $\gamma$'s energy is shifted to higher values, while the the measured energy of the $\gamma$ is lower at backward angles, with the maximum shift in either direction coming when the $\gamma$ is emitted in a direction parallel to the motion of the decaying nucleus. A $\gamma$ emitted at $90^{\deg}$ is unshifted and unbroadened. }
+\end{figure}
+
+Therefore, by performing a lineshape analysis on the distribution of the measured $\gamma$'s and a mapping of the distribution's shift with angle one can determine the nuclear lifetime. The procedure for the Doppler shift determination is particularly straightforward. By plotting the resulting centroids measured for the gamma distribution vs the $\cos(\theta)$, one should obtain a straight line, the slope of which is the product $E_{0} \beta_{0} F(\tau)$. So, for a given experimental approach with the same reaction and targets, this slope and therefore attenuation factor should match. This was not the case for the Bertone \textit{et al.} and Sch{\"u}rmann \textit{et al.} works cite{Bertone2001, Schurmann2008}, where the authors used the same reaction on ostensibly the same targets and reached incongruous $F(\tau)$ values. 
  
 
 \section{Thesis outline}
 \label{sec: thesis outline}
 
-In this dissertation, the results of a series of experiments and subsequent analyses performed to better understand the low energy behavior of the $^{14}$N$\left( p,\gamma \right) ^{15}$O will be presented. These include the measurement of the $^{14}$N$\left( p,\gamma \right) ^{15}$O reaction at the University of Notre Dame Nuclear Science Laboratory (NSL) and the Compact Accelerator System for Performing Astrophysical Research (CASPAR), located in the Sanford Underground Research Facility in the renovated Homestake Gold Mine in South Dakota, as well as a direct measurement of the lifetime of the 6.79 MeV level in $^{15}$O. 
+In this dissertation, the results of a series of experiments and subsequent analyses performed to better understand the low energy behavior of the $^{14}$N$\left( p,\gamma \right) ^{15}$O will be presented. These include the measurement of the $^{14}$N$\left( p,\gamma \right) ^{15}$O reaction at the University of Notre Dame Nuclear Science Laboratory (NSL) and the Compact Accelerator System for Performing Astrophysical Research (CASPAR), located in the Sanford Underground Research Facility in the renovated Homestake Gold Mine in South Dakota, as well as a measurement of the lifetime of the 6.79 MeV level in $^{15}$O also at the NSL. 
 
 An outline of the experimental techniques used in these measurements will be presented in Chapter \ref{chap: experiment}. There will be a brief overview of the equipment common to each of the measurements, with emphasis on the Van de Graaff accelerators and High-purity Germanium detectors used. Following this, the specific features of the different types of measurements and the facilities in which they were made will be presented. 
 
-Chapters \ref{chap: data} - \ref{chap: lifetime} will present details on the different facets of the data reduction and analysis. The first of these, Chapter \ref{chap: data}, presents the data for $^{14}$N$\left( p,\gamma \right) ^{15}$O taken at the NSL and CASPAR while detailing the process by which the cross-section and astrophysical $S$-factor were extracted. Shifting focus, Chapter \ref{chap: simulation} will focus on the Monte Carlo code that was developed and used to simulate the lifetime of the states in $^{15}$O, presenting the results of these tests and displaying their ability to reproduce experimental cases. Finally, Chapter \ref{chap: lifetime} will present the actual lineshape analysis of the data done to extract the lifetime of the 6.79 MeV state in $^{15}$O. The validity of the method will be checked against other known levels populated in the reaction.
+Chapters \ref{chap: data} - \ref{chap: lifetime} will present details on the different facets of the data reduction and analysis. The first of these, Chapter \ref{chap: data}, presents the data for $^{14}$N$\left( p,\gamma \right) ^{15}$O taken at the NSL and CASPAR while detailing the process by which the cross-section and astrophysical $S$-factor were extracted. Shifting focus, Chapter \ref{chap: simulation} will focus on the Monte Carlo code that was developed and used to simulate the lifetime of the states in $^{15}$O, presenting the results of these tests and displaying their ability to reproduce experimental cases. Finally, Chapter \ref{chap: lifetime} will present the actual Doppler shift analysis of the data done to extract the lifetime of the 6.79 MeV state in $^{15}$O. The validity of the method will be checked against other known levels populated in the reaction, like the states at 5.18 MeV and 6.17 MeV, respectively.
 
 The cross-section information and newly measured lifetime will be utilized in a new $R$-matrix analysis of the $^{14}$N$\left( p,\gamma \right) ^{15}$O reaction, presented in Chapter \ref{chap: r-matrix}. The new constraints these data provide on the low-energy behavior of the extrapolated $S$-factor will be provided, alongside a description of their impact to relevant astrophysical quantities.
 
