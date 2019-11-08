@@ -52,8 +52,9 @@ The general goals of the field of nuclear astrophysics are as follows:
 The synthesis of the chemical elements we see began with the universe as the Big Bang created hydrogen, helium, and trace amounts of lithium cite{Alpher1948}. Shortly after the Big Bang, the temperature and density of the Universe dropped too low for any significant nuclear fusion to occur and overcome the mass 5 and mass 8 barriers. This was the end of Big Bang Nucleosynthesis (BBN), as after this point, the elemental abundances were nearly stable, with the only changes coming from the radioactive decay of $^{3}$He $\rightarrow$ $t$ and $^{7}$Be $\rightarrow$ $^{7}$Li cite{Fields2011}.
 
 \begin{figure}
+\includegraphics[width=\linewidth]{figures/abundances.jpg}
 \label{fig: abundances}
-\caption{The current solar abundance pattern. }
+\caption{The current solar isotopic abundance pattern vs. mass number for even and odd nuclei cite{Jose2011}. Abundances are based on both meteoritic samples and observations of the solar photosphere. }
 \end{figure}
 
 From this point, generations of stellar evolution created nearly all other elements, leading to the currently observed elemental abundance distribution, shown in Figure \ref{fig: abundances}. The synthesis of elements heavier than BBN products, commonly referred to as "metals," began with the formation of the first stars. Cold gas clouds, composed primarily the BBN products of hydrogen and helium (and metals in subsequent stellar generations), coalesce under their mutual gravitational attraction, converting their gravitational potential energy to heat -- increasing their pressure, density, and temperature. Upon passing a critical threshold for these physical quantities, typically temperatures $>$1 MK, thermonuclear fusion reactions begin in the core cite{RyanNortonBook}. This transition marks the "birth" of a star, having reached a point where nuclear reactions provide a sufficient heat source to balance energy losses from radiation. 
@@ -66,8 +67,9 @@ Every star is unique and their intrinsic quantities when forming, such as mass o
 The vast majority of stars lie on the diagonal band stretching from the upper left (hot, bright stars) to the lower right (cool, faint stars) of the diagram. This feature is called the main sequence. These stars support themselves through core hydrogen burning -- implying that stars spend most of their lives in this long period of quiescent hydrogen burning in the \textit{pp chains} and the CNO cycles, detailed in subsequent sections. Other prominent features of typical HR diagrams are the clusters of stars in the upper quadrants (very bright stars), commonly referred to as the giant branch, the lower left quandrant (hot, faint stars), where the white dwarf stars reside, and the lower right quadrant beyond the main sequence, occupied by brown dwarfs. Each classification corresponds to different nuclear reactions, with stars evolving off the main sequence being characterized by phases of burning of heavier elements, like helium or carbon. 
 
 \begin{figure}
+\includegraphics[width=\linewidth]{figures/hrDiagram.png}
 \label{fig: HR_diagram}
-\caption{An example of a Herzprung-Russell diagram. The horizontal axis gives the temperature of the star while the vertical shows the stellar luminosities.}
+\caption{An example of a Herzprung-Russell diagram. The horizontal axis gives the temperature of the star while the vertical shows the stellar luminosities cite{CarrollBook}.}
 \end{figure}
 
 Any single star's evolutionary track will follow different paths depending on its initial mass cite{IliadisBook, RyanNortonBook}.  For cosmic objects of mass $\lesssim$ 0.08 M$_{\odot}$, where M$_{\odot}$ is the mass of the sun, core temperatures never rise high enough to sustain hydrogen fusion, and thus they evolve directly into brown dwarf stars. In the range of mass 0.08 M$_{\odot} \lesssim$ M $\lesssim$0.4 M$_{\odot}$, stars undergo core hydrogen fusion through the \textit{pp chains}, but do not reach temperatures sufficient to initiate helium burning after exhausting hydrogen in the core. Ultimately, stars in this classification become white dwarfs. The next mass grouping consists of Sun-like stars, with masses 0.4 M$_{\odot} \lesssim$ M $\lesssim$ 8.0 M$_{\odot}$, which evolve off the main sequence and continue growing and burning (both in the stellar core and shells in their stellar envelope). Such stars achieve temperatures high enough to create final abundance distribution composed of primarily carbon and oxygen in their core. After losing their stellar envelopes, these stars are carbon-oxygen white dwarfs. However, if such a star has a companion of sufficient mass, it will eventually explode in a type Ia supernova. Lastly, are stars of mass 8.0 M$_{\odot}$ $\lesssim$ M, which go through sequences of carbon, neon, oxygen, and silicon burning to produce a dominantly iron-nickel core. At this point, as the stars are more massive than the Chandrasekar limit, the gravitational attraction will exceed the support of elecron degeneracy pressure causing a core collapse (type II) supernova. Depending on the star's mass at this stage, it will become either a neutron star or black hole. While not the topic of this thesis, such explosive scenarios are currently an area of intense research as they are the location of many unresolved issues of nuclear astrophysics, including what the National Research Council identified in 2003 as one of the eleven greatest unanswered questions of the century, namely the origin of the elements heavier than iron cite{Turner2003}.
@@ -116,8 +118,9 @@ These laboratories are well known for their contributions in solving the \textsl
 
 
 \begin{figure}
+\includegraphics[width=\linewidth]{figures/energyProduction.png}
 \label{fig: CNO-energy}
-\caption{Energy dependence of the \textit{pp chains} and the CNO cycles as a function of stellar temperature.}
+\caption{Energy dependence of the \textit{pp chains} and the CNO cycles as a function of stellar temperature assuming a solar abundance distribution of CNO elements cite{Bertulani2016}. The sun's temperature is marked with the star in the figure. This shows that for lower mass stars like the sun the \textit{pp chains} are the dominant mode of energy production in main sequence burning. However, for hotter, more massive stars, the CNO cycle quickly dominates. }
 \end{figure}
 
 
@@ -126,8 +129,9 @@ Due to the importance of the $\ce{^{14}N} \left( p, \gamma \right) \ce{^{15}O}$ 
 
 
 \begin{figure}
+\includegraphics[width=\linewidth]{figures/cnoCycles.png}
 \label{fig: CNO-cycles}
-\caption{A depiction of the CNO cycles for hydrogen burning in stars. }
+\caption{A depiction of the CNO cycles for hydrogen burning in stars cite{Bertulani2016}. Cycles II, III, and IV only contribute meaningfully at very high temperatures or explosive burning scenarios. }
 \end{figure}
 
 
@@ -191,8 +195,9 @@ Recall that earlier, the cross section, $\sigma(E)$, is the probability of two n
 In astrophysical environments, nuclei typically do not have enough energy to overcome the Coulomb repulsion provided by the protons within the nucleus and combine with the attractive nuclear strong force. A diagram of the combined nuclear and Coulomb potentials is given in Fig. \ref{fig: potentials}. The repulsive Coulomb interaction causes the cross section to drop quickly at low center-of-mass energies cite{IliadisBook}. Thus, for such reactions to occur, nuclei must actually tunnel through the Coulomb barrier. 
 
 \begin{figure}
+\includegraphics[width=\linewidth]{figures/potentials.pdf}
 \label{fig: potentials}
-\caption{Schematic  plot of the combined attractive nuclear and repulsive Coulomb potentials. }
+\caption{Schematic plot of the combined attractive nuclear and repulsive Coulomb potentials where $R_{n}$ is the nuclear radius, $R_{c}$ is the classical turning point due to Coulomb repulsion, $E_{c}$ is the height of the Coulomb barrier, and $E_{p}$ is the projectile's energy. Because this is a quantum system, the projectile has a chance to tunnel through the Coulomb barrier and make it into the attractive nuclear potential when it has energy $E_{p} < E_{c}$. }
 \end{figure}
 
 The Coulomb penetrability, $P$, can be approximated as the leading term of the $s$-wave ($\ell$ = 0) barrier transmission coefficient:
@@ -226,8 +231,9 @@ By factoring the Coulomb penetrability out of the cross section, we can separate
 \noindent The astrophysical $S$-factor is slowly varying with energy, unlike the nuclear cross section. Fig. \ref{fig: energy dependence} provides a comparison of the energy dependence of both the cross section and $S$-factor, where you can see that the cross section drops by orders of magnitude in an energy regime where the $S$-factor is relatively constant. This implies that the Coulomb effects can obscure important nuclear physics effects. Additionally, as the $S$-factor is slowly varying, extrapolations of it's behavior towards zero energy from higher energy data are significantly more reliable than those made from cross section data. 
 
 \begin{figure}
+\includegraphics[width=\linewidth]{figures/crossSectionDependence.png}
 \label{fig: energy dependence}
-\caption{The energy dependence of the nuclear cross section and astrophysical S-factor  }
+\caption{The energy dependence of the nuclear cross section and astrophysical S-factor cite{RolfsBook}. The cross section drops dramatically due to Coulomb repulsion as the incident energy drops, however the $S$-factor, by removing the Coulomb penetrability varies slowly towards the Gamow window (barring the absence of nuclear resonances). }
 \end{figure}
 
 Now, after defining the $S$-factor, the reaction rate can be written finally as 
@@ -251,8 +257,8 @@ The Gamow peak's maximum can be obtained with basic calculus on the exponential 
 
 \begin{figure}
 \label{fig: Gamow Peak}
-% Figure from Galinski thesis?
-\caption{The two dominant terms of the reaction rate calculation and their convolution (Gamow peak). }
+\includegraphics[width=\linewidth]{figures/gamowWindow.png}
+\caption{The two dominant terms of the reaction rate calculation and their convolution (Gamow peak) for the $\ce{^{14}N}(p,\gamma)\ce{^{15}O}$ reaction at $T = 0.016$ GK cite{Bemmerer2004}. The y-axis is given in arbitrary units.}
 \end{figure}
 
 \begin{equation}
@@ -279,8 +285,9 @@ Unfortunately, though, measuring at energies this low is not feasible, experimen
 For the $\ce{^{14}N} \left( p, \gamma \right) \ce{^{15}O}$ reaction, both resonant and direct capture contributions are important. Resonant reactions are those in which an incoming particle combines with a target to form an excited state in a compound nucleus and then subsequently decay as part of a two-step process. Alternatively, direct capture reactions are those in which the particle pair proceeds directly to a final, bound nuclear state in one step. An energy level diagram of the $\ce{^{14}N} \left( p, \gamma \right) \ce{^{15}O}$ reaction is shown in Fig. \ref{fig: level diagram}.
 
 \begin{figure}
+\includegraphics[width=\linewidth]{figures/levelsO15.pdf}
 \label{fig: level diagram}
-\caption{An energy level diagram of the $\ce{^{14}N} \left( p, \gamma \right) \ce{^{15}O}$ reaction. This shows the pathways of decay to the ground state of the $\ce{^{15}O}$ nucleus. The paths shown in  red indicate a resonance reaction, with the formation of the compound nucleus in an excited state, while the path in blue shows a direct capture process, proceeding immediately to the ground state.}
+\caption{An energy level diagram of the $\ce{^{14}N} \left( p, \gamma \right) \ce{^{15}O}$ reaction. This shows the pathways of decay to the ground state of the $\ce{^{15}O}$ nucleus. The paths shown in red indicate a resonance reaction, with the formation of the compound nucleus in an excited state, while the path in green shows a direct capture process, proceeding immediately to the final state (ground in this example) from any energy above the proton threshold.}
 \end{figure}
 
 
@@ -505,6 +512,7 @@ Nuclear lifetimes are important observables to measure because they provide a li
 
 
 \begin{figure}
+\includegraphics[width=\linewidth]{figures/lifetimeTechniques.png}
 \label{fig: lifetimeRanges}
 \caption{Ranges over which the different lifetime measuring techniques are valid.}
 \end{figure}
@@ -520,8 +528,9 @@ E_{\gamma} = E_{0} \left(1 + \dfrac{v(t)}{c} \cos (\theta)   \right),
 \noindent where $E_{0}$ is the energy of the decay for a nucleus at rest, $c$ is the speed of light, and $\theta$ is the lab angle between the momentum vectors of the decaying nucleus and gamma ray, respectively. A depiction of this scenario is given in Fig. \ref{fig: decay}.
 
 \begin{figure}
+\includegraphics[width=\linewidth]{figures/decay.pdf}
 \label{fig: decay}
-\caption{A nuclear reaction showing the creation of an excited nucleus and subsequent decay , causing a Doppler shift in the measured energy of the $\gamma$ ray.}
+\caption{A generic nuclear reaction showing the creation of an excited nucleus and subsequent decay, causing a Doppler shift in the measured energy of the $\gamma$ ray.}
 \end{figure}
 
 
