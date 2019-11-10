@@ -19,3 +19,6 @@
 *.toc
 *.tks
 
+
+# keynote files for making figures
+*.key
